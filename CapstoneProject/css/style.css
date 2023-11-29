@@ -35,7 +35,7 @@
     justify-content: center;
     transition: opacity 500ms;
     opacity: 0;
-    visibility: hidden;
+    visibility: visible;
 }
 .overlay-popup:target{
     opacity: 1;
@@ -43,7 +43,7 @@
 }
 .wrapper-popup{
     position: relative;
-    width: 50%;
+    width: 100%;
     min-height: 400px;
     display: flex;
 }
@@ -63,6 +63,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-radius: 30px;
 }
 .details-popup{
     background: #6BB5FF;
@@ -137,7 +138,7 @@
 }
 .popup-image{
     width: 100%; 
-    margin-left: -25%;
+    margin-left: -15%;
 }
 @media only screen and (max-width:900px){
     .wrapper-popup{
@@ -171,6 +172,16 @@
     align-items: center;
     z-index: 100;
 
+}
+
+.login-container, .signup-container{
+    width: 80%; 
+    margin: auto; 
+    border-radius: 30px; 
+    background-color: white; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-top: 100px; 
+    margin-bottom: 15px;
 }
 
 .logo img{
@@ -234,6 +245,11 @@
 
 body{
     background-color: #F2F3F3;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 hr{
@@ -248,8 +264,9 @@ hr{
     height: 100px;
     background-color: #00203D;
     color: white;
-    margin-top: 1%;
+    margin-top: auto;
     padding: 1.5% 1% 1% 1%; 
+    margin-top: 20px;
 }
 
 .home {
@@ -265,16 +282,15 @@ hr{
 .home-content {
     max-width: 100%;
     width: 100%;
-    position: absolute;
+    position: relative;
     min-height: 100vh;
-    top: 30%;
     text-align: justify;
     color: #fff;
-    padding: 0 190px;
+    padding: 0 30%;
+    padding-top: 30%;
 }
 .home-content h1{
     font-size: 30px;
-    margin-top: -6px;
     font-family: Playfair Display;
     color: #f8f8f8;
 }
@@ -836,7 +852,7 @@ hr{
     border-radius: 30px;
 }
   
-.grid-container-4 {
+.grid-container-4-contact {
     display: grid;
     grid-template-columns: 100%;
     gap: 10px;
@@ -1004,4 +1020,356 @@ hr{
     border: transparent; 
     padding-right: 2%; 
     padding-top: 1%;
+}
+.profile {
+    position: relative;
+    font-size: 16px;
+    font-family: Source Sans 3;
+    color: black;
+    margin-bottom: 10px;
+
+}
+
+.profile img{
+    display: flex;
+    width: 22px;
+    padding-top: -10px;
+    margin-top: -30px;
+    margin-bottom: 15px;
+    margin-left: 609px;
+    padding-right: 0px;
+    justify-content: space-between;
+}
+
+.booking-head{
+    max-width: 100%;
+    width: 100%;
+    position: absolute;
+    min-height: 100vh;
+    top: 20%;
+    text-align: justify;
+    color: #000000;
+    padding: 0 190px;
+}
+
+.booking-head h1{
+    font-size: 1.7rem;
+    margin-top: -6px;
+    margin-left: -150px;
+    font-family: Source sans 3;
+    color: #000000;
+}
+
+.booking-head p{
+    font-size: 1.2rem;
+    margin: 20px auto;
+    margin-left: -150px;
+    line-height: 3px;
+    font-family: Source sans 3;
+}
+
+.loggedinBox{
+    position: static;
+    margin: 30px 20px 0 20px;
+    background-color: white;
+    padding: 2%;
+    margin-top: 230px;
+    border-radius: 25px; 
+}
+
+.loggedin-table {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    padding: 2px;
+    margin-bottom: 1px;
+}
+
+.loggedin-table img{
+    display: flex;
+    width: 50px;
+    margin-top: -10px;
+    
+}
+
+.loggedin-table h2{
+    font-size: 1.1rem;
+    font-family:Source Sans 3;
+    font-weight: bold;
+    margin-left: 14px;
+}
+
+
+.bookingForm-table {
+    position: static;
+    margin: 30px 20px 0 20px;
+    background-color: white;
+    padding: 2%;
+    margin-top: 30px;
+    border-radius: 25px; 
+
+}
+
+.bookingForm-table h3{
+    font-size: 1.5rem;
+    margin-bottom: 33px;
+    font-family:Source Sans 3;
+    font-weight: bold;
+}
+
+.bookingForm-table p{
+    margin-bottom: 2px;
+    border-radius: 10px;
+}
+
+.bookingForm-table img{
+    width: 53%;
+}
+
+.contactDetails-text {
+    align-items: center;
+    color: #333;
+    justify-content: center;
+    margin-top: 50px;
+
+}
+
+.contactDetails-text h1{
+    font-size: 1.7rem;
+    margin-top: -4px;
+    margin-left: 34px;
+    font-family: Source sans 3;
+    color: #000000;
+}
+
+.contactDetails-text p{
+    font-size: 1.2rem;
+    margin-left: 34px;
+    margin-top: 7px;
+    font-family: Source sans 3;
+    color: #000000;
+}
+
+.contactDetails-content{
+    position: static;
+    margin: 30px 20px 0 20px;
+    background-color: white;
+    padding: -3%;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-radius: 25px; 
+}
+
+
+.contactDetails-radio [type="radio"] {
+    width: 14px;
+    height: 14px;
+    margin: 24px;
+    margin-left: 30px;
+    justify-content: left;
+     
+}
+
+.contactDetails-radio [name] {
+    margin-left: 30px;
+    font-size: 1.5rem;
+}
+
+.contactDetails-content .input-box{
+    margin: 20px;
+    margin-top: -6px;
+    margin-bottom: 7px;
+    padding: 10px;
+    padding-top: 2px;
+   
+}
+
+.contactDetails-content .input-box input{
+    width: 57%;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 1px;
+}
+
+.total-payment{
+    position: static;
+    margin: 30px 20px;
+    background-color: white;
+    padding: 2%;
+    margin-top: 40px;
+    border-radius: 25px; 
+}
+
+.payment-table {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+    margin-bottom: 20px;
+}
+
+.payment-table h1{
+    font-size: 1.4rem;
+    font-family: Source Sans 3;
+    font-weight: bold;
+    margin-left: 14px;
+}
+
+.payment-table span{
+    font-size: 1.4rem;
+    font-family: Source Sans 3;
+    font-weight: bold;
+    margin-left: 989px;
+}
+
+.paymentButton{
+    position: relative;
+    justify-content: center;
+    height: 48px;
+    width: 90%;
+    color: #fff;
+    font-size: 1.4rem;
+    margin-top: 37px;
+    margin: 18px 12px;
+    margin-left: 76px;
+    background-color: #5499de;
+    border: none;
+    border-radius: 6px;
+    font-weight: 400;
+    font-family: Source Sans 3;
+}
+
+.bookConfirm-head{
+    max-width: 100%;
+    width: 100%;
+    position: absolute;
+    min-height: 100vh;
+    top: 20%;
+    text-align: justify;
+    color: #000000;
+    padding: 0 190px;
+}
+    
+.bookConfirm-head h1{
+    font-size: 1.7rem;
+    margin-top: -6px;
+    margin-left: -162px;
+    font-family: Source Sans 3;
+    color: #000000;
+}
+
+.details-payment{
+    position: static;
+    margin: 30px 20px 0 20px;
+    background-color: white;
+    padding: 2%;
+    margin-top: 180px;
+    border-radius: 25px; 
+}
+
+.contactDetails-table {
+    position: static;
+    margin: 30px 20px 0 20px;
+    margin-left: 25px;
+    background-color: white;
+    padding: -10px;
+    margin-top: 2px;
+    margin-bottom: -4px;
+    border-radius: 25px; 
+
+}
+
+.contactDetails-table h2{
+    font-size: 1.3rem;
+    margin-top: -6px;
+    margin-left: -30px;
+    margin-bottom: 7px;
+    color: #000000;
+}
+
+.contactDetails-table p{
+    font-size: 1.1rem;
+    margin-top: -6px;
+    margin-left: -30px;
+    margin-bottom: 3px;
+    color: #000000;
+}
+
+.contactDetails-table h3{
+    font-size: 1.3rem;
+    margin-top: -3px;
+    margin-left: -30px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    color: #000000;
+}
+
+.contactDetails-table h4{
+    font-size: 1.3rem;
+    margin-top: -3px;
+    margin-left: -30px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    color: #000000;
+}
+
+.priceDetails-text{
+    align-items: center;
+    color: #000000;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.priceDetails-text h1{
+    font-size: 1.7rem;
+    margin-top: -4px;
+    margin-left: 34px;
+    font-family: Source Sans 3;
+    font-weight: bold;
+    color: #000000;
+}
+
+.priceDetails{
+    position: static;
+    margin: 30px 20px 0 20px;
+    background-color: white;
+    padding: -3%;
+    margin-top: 20px;
+    border-radius: 25px; 
+}
+
+.priceDetails-table{
+    width: 100%;
+    margin-top: -10px;
+    margin-left: 28px;
+    padding-bottom: 10px;
+    
+} 
+
+.priceDetails-table h2{
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-left: -3px;
+    margin-bottom: 2px;
+    color: #000000;
+}
+
+.priceDetails-table p{
+    font-size: 1.2rem;
+    margin-top: -6px;
+    margin-left: -3px;
+    margin-bottom: 3px;
+    color: #000000;
+}
+
+.priceDetails-table h3{
+    font-size: 1.3rem;
+    margin-top: 1px;
+    margin-left: -3px;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.tax-detail-td{
+    color: #00BE2A;
 }
