@@ -2,9 +2,10 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Ocean 7 Traverse</title>
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="script.js"></script>
+        <title>Ocean 7 Traverse</title> 
+        <link rel="icon" href="assets/logo.png" type="image/png">
     </head>
     <body>
         <header class="header">
@@ -17,8 +18,8 @@
                 <a href="home.html">Home</a>
                 <a href="myPurchase.html">My Purchase</a>
                 <a href="aboutUs.html">About Us</a>
-                <a href="contactUs.html">Contact Us</a>
-                <a href="#popup">Log In</a>
+                <a href="contact_us.html">Contact Us</a>
+                <a href="login.html">Log In</a>
             </nav>
         </header>
 
@@ -35,7 +36,7 @@
             </div>
             <div class="home-column">
                 <div class="home-column-content">
-                    <form action="#" method="post">
+                    <form action="ticketSearch.html" method="post">
                         <div class="input-box">
                             <label>From</label> 
                             <input type="text" placeholder="" required>
@@ -64,8 +65,7 @@
                                 <input type="text" placeholder="" required>
                             </div>
                         </div>
-
-                        <button class="form-button">Let's Search</button>
+                        <button class="form-button" type="submit">Let's Search</button>
                     </form>
                 </div>
             </div>
@@ -167,54 +167,5 @@
             <a href="#" class="footer-logo"><img src="assets/twitter.png" alt=""></a>
             <a href="#" class="footer-logo"><img src="assets/youtube.png" alt=""></a>
         </footer>
-        <section>
-            <div id="popup" class="overlay-popup">
-                <div class="wrapper-popup">
-                    <a href="home.html" class="close">&times;</a>
-                    <div class="column-popup details-popup">
-                        <div class="signin">
-                            <h1 class="h1-popup" >Welcome Back!</h1>
-                            <img src="assets/CoolClips_vc001551 (1).png" alt="" class="popup-image">
-                            <h1 class="h1-popup">Unlock a World of Seafaring Experiences</h1>
-                            <p class="p-popup">Sign in</p>
-                        </div>
-                        <div class="signup">
-                            <h1 class="h1-popup">Hello, Friend!</h1>
-                            <img src="assets/CoolClips_vc001551 (1).png" alt="" class="popup-image">
-                            <h1 class="h1-popup">Enter your personal details and start journey with us</h1>
-                            <p class="p-popup">Sign up</p>
-                        </div>
-                    </div>
-                    <div class="column-popup content-popup">
-                        <div class="signin">
-                            <input type="email" name="" id="" placeholder="Username" class="input-popup">
-                            <input type="password" name="" id="" placeholder="Password" class="input-popup">
-                            <a href="#" class="a-popup">Forgot Password</a>
-                            <button class="form-submit-popup">Sign in</button>
-                            <span class="span-popup">You don't have an account yet? <button id="signup"> Create it now!</button></span>
-                        </div>
-                        <div class="signup">
-                            <h1 class="h1-popup">Sign up</h1>
-                            <input type="name" placeholder="Full Name" class="input-popup">
-                            <input type="email" placeholder="Username" class="input-popup">
-                            <input type="password" placeholder="Password" class="input-popup">
-                            <button class="form-submit-popup">Sign up</button>
-                            <span class="span-popup">Already have an account? <button id="signin"> Sign In</button></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script>
-            $('.signup').hide();
-
-            $('#signin, #signup').on(
-                'click',
-                function(){
-                    $('.signin, .signup').toggle()
-                }
-            )
-        </script>
     </body>
 </html>
