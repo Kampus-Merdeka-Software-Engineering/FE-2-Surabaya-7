@@ -18,4 +18,39 @@ document.getElementById('contact_form').addEventListener('submit', function(even
     }
   });
 
+function init(){
+    document.getElementById('payButton').onclick = function() {
+        Swal.fire({
+            title: "Payment Secured!",
+            text: "Your transaction is complete and your booking is confirmed.",
+            icon: "success"
+        }).then((result)=>{
+            if(result.value){
+                window.location.href = 'home.html';
+            }
+        });
+    };
+}
+document.addEventListener("DOMContentLoaded", init);
 
+function myFunction(detailID){
+    var x = document.getElementById(detailID);
+    if (x.style.display === "none"){
+        x.style.display = "block";
+    }else{
+        x.style.display = "none";
+    }
+}
+
+var currentDetail = null;
+
+function myFunction(divId) {
+    var x = document.getElementById(divId);
+
+    if (currentDetail !== null && currentDetail !== x) {
+        currentDetail.style.display = "none";
+    }
+
+    x.style.display = (x.style.display === "none" || x.style.display === "") ? "block" : "none";
+    currentDetail = x;
+}
