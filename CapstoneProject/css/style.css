@@ -195,14 +195,72 @@
     
 
 } 
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+/* Style for the bars in the hamburger icon */
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
 .nav-brand {
     margin-top: 4px;
     font-size: 1.9em;
-    padding-right: 300px;
     color: black;
     font-weight: bolder;
     text-decoration: none;
+}
 
+/* Media query for responsive design */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 70px; /* Adjust the top position based on your header height */
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav.active {
+        display: flex; /* or display: block; */
+        background-color: #fff; /* Set the background color explicitly */
+    }
+
+    .nav a {
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Styles to show/hide the bars for the hamburger icon */
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-6px, 6px);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-6px, -6px);
+    }
 }
 .nav a {
     position: relative;
@@ -212,6 +270,7 @@
     text-decoration: none;
     text-transform: uppercase;
     padding-left: 44px;
+    transition: color 0.3s; /* Add transition for smooth color change */
 }
 
 .nav a::after {
@@ -224,18 +283,23 @@
     background: black;
     border-radius: 2px;
     transform: scaleX(0);
-    transition: .2s;
+    transition: transform 0.2s;
+}
+
+/* Add hover styles for the black underline */
+.nav a:hover {
+    color: #000; /* Change the text color on hover */
 }
 
 .nav a:hover::after {
     transform: scaleX(1);
 }
+
 .footer-copyright{
     width: 80%;
     font-size: 120%;
     float: left;
     padding-top: 1%;
-    padding-right: 40%;
     display: inline;
 }
 
@@ -257,28 +321,68 @@ hr{
     margin-bottom: 1%;
     margin-top: 1%;
 }
-.footer{
+.footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 100px;
+    height: auto;
     background-color: #00203D;
     color: white;
     margin-top: auto;
-    padding: 1.5% 1% 1% 1%; 
-    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
 }
+
+.footer-logo {
+    padding: 10px;
+}
+
+.footer-logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.footer-copyright {
+    font-size: 100%;
+    text-align: left; /* Align to the left */
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+}
+
+/* Media query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-content {
+        order: 1;
+    }
+
+    .footer-copyright {
+        text-align: center;
+    }
+}
+
 
 .home {
     position: relative;
     width: 100%;
     height: 110vh;
-    background-image:url(../assets/background3.jpg);
+    background-image: url('../assets/background3.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
 }
+
 .home-content {
     max-width: 100%;
     width: 100%;
@@ -379,6 +483,35 @@ hr{
     font-weight: 400;
     font-family: Source Sans 3;
 
+}
+/* Media query for responsive design */
+@media (max-width: 768px) {
+    .home-content {
+        padding: 0 10%;
+        padding-top: 10%;
+    }
+
+    .home-content h1 {
+        font-size: 20px;
+    }
+
+    .home-content p {
+        font-size: 14px;
+        margin: 10px 0; /* Added margin for spacing */
+    }
+
+    .home-column-content {
+        width: 100%;
+    }
+
+    .input-box {
+        height: auto;
+    }
+
+    .column1,
+    .column2 {
+        margin-top: 0;
+    }
 }
 
 
@@ -533,6 +666,7 @@ hr{
     display: block;
     width: 100%;
     float: left;
+    max-width: 100%;
     padding: 15px;
 }
 
@@ -560,20 +694,43 @@ hr{
 
 .section_aboutus .grid-container-1 {
     display: grid;
-    grid-template-columns: 45% 55%;
+    grid-template-columns: 1fr; /* Use a single column by default */
     gap: 10px;
     padding: 10px;
-  }
+}
+
+/* Media query for responsiveness */
+@media (min-width: 768px) {
+    .section_aboutus .grid-container-1 {
+        grid-template-columns: 45% 55%; /* Use two columns on larger screens */
+    }
+}
 
 .section_aboutus .grid-container-2 {
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 1fr;
+    gap: 10px;
     padding-left: 30px;
 }
 
-.section_aboutus .about_icon img {
-    width: 80%;
-    padding-left: 50px;
+/* Media query for responsiveness */
+@media (min-width: 768px) {
+    .section_aboutus .grid-container-2 {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: start;
+    }
+}
+
+/* Style for the new about_item container */
+.section_aboutus .about_item {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the about_icon */
+.section_aboutus .about_item img {
+    width: 80px; /* Adjust the size as needed */
+    margin-right: 20px; /* Add space between icon and text */
 }
 
 .section_aboutus .about_text_benefit {
@@ -685,20 +842,34 @@ hr{
 }
 
 
-.grid-container-4 {
+/* General styles */
+.section_aboutus .grid-container-4 {
     display: grid;
-    grid-template-columns: 13.3% 20% 13.3% 20% 13.3% 20%;
-    margin: 70px 15px 50px 0px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding-left: 30px;
 }
 
-.section_4_icon img{
-    width: 60%;
-    float: right;
+/* Media query for responsiveness */
+@media (min-width: 768px) {
+    .section_aboutus .grid-container- {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: start;
+    }
+}
+
+.section_aboutus .section_4_icon,
+.section_aboutus .section_4_content {
+    text-align: center; /* Center content */
+}
+
+.section_aboutus .section_4_icon img {
+    width: 80%; /* Adjust the width as needed */
+    max-width: 80px; /* Adjust the max-width as needed */
+    margin-bottom: 15px;
 }
 
 .section_aboutus .section_4_content {
-    display: block;
-    float: left;
     padding: 15px;
 }
 
@@ -712,7 +883,13 @@ hr{
     font-weight: normal;
     font-size: small;
     font-family: source sans 3;
+}
 
+/* Media query for responsiveness */
+@media (min-width: 768px) {
+    .section_aboutus .grid-container-4 {
+        grid-template-columns: repeat(3, 1fr); /* Three columns on larger screens */
+    }
 }
 
 .myPurchase {
@@ -874,6 +1051,35 @@ hr{
     color: #ffffff;
     font-size: 25px;
     font-family:Source Sans 3;
+}
+@media (max-width: 768px) {
+    .main_container .grid-container-1 {
+        grid-template-columns: 100%; /* Change to full width */
+    }
+
+    .description .grid-container-3 {
+        grid-template-columns: 100%;
+        padding-left: 0;
+    }
+
+    .contact_form {
+        order: 2; /* Set the order to make it below */
+    }
+    .content_image {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .content_desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contact-h3 {
+        text-align: center;
+    }
+    .contact-p {
+        text-align: center;
+        margin-bottom: 15px;
+    }
 }
 
 .search-home {
@@ -1062,19 +1268,36 @@ hr{
 
 .booking-head p{
     font-size: 1.2rem;
-    margin: 20px auto;
-    margin-left: -150px;
-    line-height: 3px;
+    margin-left: 34px;
+    margin-top: 7px;
     font-family: Source sans 3;
+    color: #000000;
+}
+/* Media query for screens with a maximum width of 768px (adjust as needed) */
+@media (max-width: 768px) {
+    .booking-head {
+        padding: 0 20px; /* Adjust padding for smaller screens */
+    }
+
+    .booking-head h1 {
+        margin-left: 0; /* Reset margin for smaller screens */
+        text-align: left; /* Center the text */
+    }
+
+    .booking-head p {
+        margin-left: 0; /* Reset margin for smaller screens */
+        text-align: left; /* Center the text */
+        margin-bottom: 3%;
+    }
 }
 
-.loggedinBox{
+.loggedinBox {
     position: static;
     margin: 30px 20px 0 20px;
     background-color: white;
     padding: 2%;
     margin-top: 230px;
-    border-radius: 25px; 
+    border-radius: 25px;
 }
 
 .loggedin-table {
@@ -1085,19 +1308,35 @@ hr{
     margin-bottom: 1px;
 }
 
-.loggedin-table img{
+.loggedin-table img {
     display: flex;
     width: 50px;
     margin-top: -10px;
-    
 }
 
-.loggedin-table h2{
+.loggedin-table h2 {
     font-size: 1.1rem;
-    font-family:Source Sans 3;
+    font-family: Source Sans 3;
     font-weight: bold;
     margin-left: 14px;
 }
+
+/* Media query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+    .loggedinBox {
+        padding: 1%;
+    }
+
+    .loggedin-table img {
+        width: 30px;
+    }
+
+    .loggedin-table h2 {
+        font-size: 1rem;
+        margin-left: 10px;
+    }
+}
+
 
 
 .bookingForm-table {
@@ -1203,35 +1442,33 @@ hr{
 .payment-table {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
     padding: 2px;
     margin-bottom: 20px;
 }
 
-.payment-table h1{
+.payment-table h1 {
     font-size: 1.4rem;
     font-family: Source Sans 3;
     font-weight: bold;
-    margin-left: 14px;
+    margin-bottom: 10px; /* Add space below h1 */
 }
 
-.payment-table span{
+.payment-table span {
     font-size: 1.4rem;
     font-family: Source Sans 3;
     font-weight: bold;
-    margin-left: 989px;
+    margin-left: 0; /* Reset margin-left */
 }
 
-.paymentButton{
-    position: relative;
-    justify-content: center;
-    height: 48px;
+.paymentButton {
     width: 90%;
+    max-width: 300px; /* Set a maximum width if needed */
+    height: 48px;
     color: #fff;
     font-size: 1.4rem;
-    margin-top: 37px;
-    margin: 18px 12px;
-    margin-left: 76px;
+    margin-top: 20px; /* Adjust margin-top */
     background-color: #5499de;
     border: none;
     border-radius: 6px;
@@ -1239,7 +1476,8 @@ hr{
     font-family: Source Sans 3;
 }
 
-.bookConfirm-head{
+
+.bookConfirm-head {
     max-width: 100%;
     width: 100%;
     position: absolute;
@@ -1247,16 +1485,28 @@ hr{
     top: 20%;
     text-align: justify;
     color: #000000;
-    padding: 0 190px;
+    padding: 0 15px; /* Adjust padding for smaller screens */
 }
-    
-.bookConfirm-head h1{
+
+.bookConfirm-head h1 {
     font-size: 1.7rem;
     margin-top: -6px;
-    margin-left: -162px;
+    margin-left: 10px;
     font-family: Source Sans 3;
     color: #000000;
 }
+
+/* Media query for screens with a maximum width of 768px (adjust as needed) */
+@media (max-width: 768px) {
+    .bookConfirm-head {
+        padding: 0 15px; /* Adjust padding for smaller screens */
+    }
+
+    .bookConfirm-head h1 {
+        margin-left: 0; /* Reset margin for smaller screens */
+    }
+}
+
 
 .details-payment{
     position: static;
@@ -1313,63 +1563,61 @@ hr{
     color: #000000;
 }
 
-.priceDetails-text{
+.priceDetails-text {
     align-items: center;
     color: #000000;
     justify-content: center;
     margin-top: 50px;
+    text-align: left; /* Center text on smaller screens */
+    padding-left: 10px;
+    margin-left: 20px;
 }
 
-.priceDetails-text h1{
+.priceDetails-text h1 {
     font-size: 1.7rem;
     margin-top: -4px;
-    margin-left: 34px;
     font-family: Source Sans 3;
     font-weight: bold;
     color: #000000;
 }
 
-.priceDetails{
+.priceDetails {
     position: static;
     margin: 30px 20px 0 20px;
     background-color: white;
-    padding: -3%;
+    padding: 2%;
     margin-top: 20px;
-    border-radius: 25px; 
+    border-radius: 25px;
 }
 
-.priceDetails-table{
+.priceDetails-table {
     width: 100%;
-    margin-top: -10px;
-    margin-left: 28px;
+    margin-top: 10px;
+    margin-left: 0; /* Reset margin for smaller screens */
     padding-bottom: 10px;
-    
-} 
+}
 
-.priceDetails-table h2{
+.priceDetails-table h2,
+.priceDetails-table p,
+.priceDetails-table h3 {
     font-size: 1.5rem;
     margin-top: 10px;
-    margin-left: -3px;
-    margin-bottom: 2px;
-    color: #000000;
-}
-
-.priceDetails-table p{
-    font-size: 1.2rem;
-    margin-top: -6px;
-    margin-left: -3px;
-    margin-bottom: 3px;
-    color: #000000;
-}
-
-.priceDetails-table h3{
-    font-size: 1.3rem;
-    margin-top: 1px;
-    margin-left: -3px;
+    margin-left: 0; /* Reset margin for smaller screens */
     margin-bottom: 10px;
     color: #000000;
 }
 
-.tax-detail-td{
+.tax-detail-td {
     color: #00BE2A;
+}
+
+/* Media query for screens with a maximum width of 768px (adjust as needed) */
+@media (max-width: 768px) {
+    .priceDetails-text h1 {
+        margin-left: 0; /* Reset margin for smaller screens */
+    }
+
+    .priceDetails-table {
+        margin-left: 0; /* Reset margin for smaller screens */
+    }
 }

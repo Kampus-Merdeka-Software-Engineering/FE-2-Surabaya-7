@@ -8,17 +8,22 @@
         <link rel="icon" href="assets/logo.png" type="image/png">
     </head>
     <body>
-        <header class="header">
+        <header class="header"> 
             <a href="#" class="logo">
-                <img src="assets/logo.png" alt="">
-            </a>
-            <a href="#" class="nav-brand">Ocean 7 Traverse</a>
-    
+            <img src="assets/logo.png">  </a> 
+            <a href="#" class ="nav-brand"> Ocean 7 Traverse </a>
+
+            <button class="hamburger" onclick="toggleNav()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>        
+
             <nav class="nav">
                 <a href="home.html">Home</a>
                 <a href="myPurchase.html">My Purchase</a>
                 <a href="aboutUs.html">About Us</a>
-                <a href="contact_us.html">Contact Us</a>
+                <a href="contactUs.html">Contact Us</a>
                 <a href="login.html">Log In</a>
             </nav>
         </header>
@@ -162,10 +167,12 @@
         </section>
         <footer class="footer">
             <p class="footer-copyright">&copy; 2023 Ocean 7 Traverse, Inc. All rights reserved</p>
-            <a href="#" class="footer-logo"><img src="assets/facebook.png" alt=""></a>
-            <a href="#" class="footer-logo"><img src="assets/instagram.png" alt=""></a>
-            <a href="#" class="footer-logo"><img src="assets/twitter.png" alt=""></a>
-            <a href="#" class="footer-logo"><img src="assets/youtube.png" alt=""></a>
+            <div class="footer-content">
+                <a href="#" class="footer-logo"><img src="assets/facebook.png" alt=""></a>
+                <a href="#" class="footer-logo"><img src="assets/instagram.png" alt=""></a>
+                <a href="#" class="footer-logo"><img src="assets/twitter.png" alt=""></a>
+                <a href="#" class="footer-logo"><img src="assets/youtube.png" alt=""></a>
+            </div>
         </footer>
     </body>
 </html>
