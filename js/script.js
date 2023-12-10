@@ -91,7 +91,7 @@ function displayDataInTable() {
 
     if (routeHeading && detailsCell) {
         routeHeading.innerHTML = fromValue + ' &rarr; ' + toValue;
-        detailsCell.innerHTML = dateValue + '  ||  ' + passengersValue + ' Passengers  ||  Executive';
+        detailsCell.innerHTML = dateValue + '  ||  ' + passengersValue + ' Passengers';
     }
 
     if (departureInfo && arrivalInfo && passengerInfo) {
