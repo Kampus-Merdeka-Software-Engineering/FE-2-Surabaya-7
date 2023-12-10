@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="js/script.js"></script>
+        <title>Ocean 7 Traverse</title> 
+        <link rel="icon" href="assets/logo.png" type="image/png">
+    </head>
+    <body>
+        <header class="header"> 
+            <a href="#" class="logo">
+            <img src="assets/logo.png">  </a> 
+            <a href="#" class ="nav-brand"> Ocean 7 Traverse </a>
+
+            <button class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>        
+
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="myPurchase.html">My Purchase</a>
+                <a href="aboutUs.html">About Us</a>
+                <a href="contactUs.html">Contact Us</a>
+                <a href="login.html">Log In</a>
+            </nav>
+        </header>
+
+
+        <div class="booking-head" style="z-index: -1;">
+            <h1>Your Booking</h1>
+            <p>Fill in your details and review your booking</p>
+        </div>
+
+        <div class="loggedinBox">
+            <table class="loggedin-table">
+                <tr>
+                    <td>
+                        <img src="assets/account-profile.png">
+                    </td>
+                    <td>
+                        <h2>Guest User</h2>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="contactDetails-text">
+                <h1>Contact Details</h1>
+                <p>The contact details will be used to send the e-ticket and for refund/reschedule purposes.</p>
+            </div>
+    
+            <div class="contactDetails-content">
+                <form id="bookconfirm" action="bookconfirm.html" method="post" onsubmit="saveContactDetails(event)">
+                    <div class="contactDetails-radio">
+                        <label for="option1"><input type="radio" id="option1" name="salutation" value="Mr." required> Mr.</label>
+                        <label for="option2"><input type="radio" id="option2" name="salutation" value="Mrs." required> Mrs.</label>
+                        <label for="option3"><input type="radio" id="option3" name="salutation" value="Ms." required> Ms.</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" placeholder="Full Name" name="name" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="number" placeholder="Phone Number" name="phone_number" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" placeholder="Email" name="email" required>
+                    </div>
+                    <td colspan="2">
+                        <button class="paymentButton">Continue</button>
+                    </td>
+                </form>
+            </div>        
+        <footer class="footer">
+            <p class="footer-copyright">&copy; 2023 Ocean 7 Traverse, Inc. All rights reserved</p>
+            <div class="footer-content">
+                <a href="#" class="footer-logo"><img src="assets/facebook.png" alt=""></a>
+                <a href="#" class="footer-logo"><img src="assets/instagram.png" alt=""></a>
+                <a href="#" class="footer-logo"><img src="assets/twitter.png" alt=""></a>
+                <a href="#" class="footer-logo"><img src="assets/youtube.png" alt=""></a>
+            </div>
+        </footer>
+    </body>
+</html>
