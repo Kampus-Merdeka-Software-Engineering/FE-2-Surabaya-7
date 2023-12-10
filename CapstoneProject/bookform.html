@@ -3,7 +3,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/style.css">
-        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
         <title>Ocean 7 Traverse</title> 
         <link rel="icon" href="assets/logo.png" type="image/png">
     </head>
@@ -51,7 +51,7 @@
             <table>
                 <tr>
                     <td>
-                        <h3>Jakarta &#8646 Surabaya</h3>
+                        <h3 id="route">Jakarta ➔ Surabaya</h3>
                     </td>
                 </tr>
                 
@@ -59,45 +59,29 @@
                     <td>
                         <p>Depart</p>
                     </td>
-                        <td>Mon, 6 November 2023</td>
-                </tr>
-                <tr>
-                        <td>
-                            <img src="assets/bali_eka_jaya_l.png" alt="" >
-                        </td>
-                        <td>
-                            <h3>06:00 &#x2192 05:30</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Duration: 23h 30m</td>
-                        <td>Type: Direct</td>
-                </tr>
-            </table>
-
-                <hr>
-                <table>
-                    <tr>
-                    <td>
-                        <p>Return</p>
-                    </td>
-                    <td>Tue, 7 November 2023</td>
+                    <td id="date">Mon, 6 November 2023</td>
                 </tr>
                 <tr>
                     <td>
                         <img src="assets/bali_eka_jaya_l.png" alt="">
                     </td>
                     <td>
-                        <h3>06:00 &#x2192 05:30</h3>
+                        <h3 id="time">06:00 ➔ 05:30</h3>
                     </td>
                 </tr>
                 <tr>
-                    <td>Duration: 23h 30m</td>
-                    <td>Type: Direct</td>
+                    <td id="duration">Duration: 23h 30m</td>
+                    <td id="type">Type: Direct</td>
+                    <td id="totalPassengers">3</td>
+                </tr>
+                <tr>
+                    <td id="priceLabel">Price:</td>
+                    <td id="price">Rp 250,000/pax</td>
                 </tr>
             </table>
         </div>
-
+        
+        <hr>
         
         <div class="contactDetails-text">
                 <h1>Contact Details</h1>
@@ -105,45 +89,47 @@
             </div>
     
             <div class="contactDetails-content">
-                <form action="#" method="post">
-                    <div class="contactDetails-radio">
-                        <input type="radio" id="option1" name="mr."> Mr.
-                        <input type="radio" id="option2" name="mrs."> Mrs.
-                        <input type="radio" id="option3" name="ms."> Ms.
+                <form action="bookconfirm.html" method="get">
+                    <div class="contactDetails-radio" required>
+                        <input type="radio" id="option1" name="gender" value="Mr."> Mr.
+                        <input type="radio" id="option2" name="gender" value="Mrs."> Mrs.
+                        <input type="radio" id="option3" name="gender" value="Ms."> Ms.
                     </div>   
 
                     <div class="input-box">        
-                        <input type="full name" placeholder="Full Name" name="">  
+                        <input type="text" placeholder="Full Name" name="fullName" id="fullName" required>  
                     </div>       
                     <div class="input-box">
-                        <input type="phone number" placeholder="Phone Number" name="">
+                        <input type="text" placeholder="Phone Number" name="phone" id="phone" required>
                     </div>
                     <div class="input-box">
-                        <input type="email" placeholder="Email" name="">
+                        <input type="email" placeholder="Email" name="email" id="email" required>
                     </div>
-                    </div> 
+                    <div class="total-payment">
+                        <table class="payment-table">
+                            <tr>
+                                <td>
+                                    <h1>Total Payment</h1>
+                                </td>
+                                <td id="totalPayment">
+                                    <!-- Initial placeholder value, will be updated dynamically -->
+                                    <h1>Rp 0</h1>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <a id="paymentLink" href="bookconfirm.html">
+                                        <button class="paymentButton" onclick="prepareParameters()">Continue to Payment</button>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </form>
             </div>
 
-        <div class="total-payment">
-            <table class="payment-table">
-            <tr>
-                <td>
-                <h1>Total Payment</h1>
-                </td>
-                <td>
-                    <h1>Rp 1,500,000</h1>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <a href="bookconfirm.html">
-                        <button class="paymentButton">Continue to Payment</button>
-                    </a>
-                </td>
-            </tr>
-            </table>
-        </div>
+        
+        
         
         <footer class="footer">
             <p class="footer-copyright">&copy; 2023 Ocean 7 Traverse, Inc. All rights reserved</p>
@@ -153,6 +139,6 @@
                 <a href="#" class="footer-logo"><img src="assets/twitter.png" alt=""></a>
                 <a href="#" class="footer-logo"><img src="assets/youtube.png" alt=""></a>
             </div>
-        </footer>
+        </footer> 
     </body>
 </html>
