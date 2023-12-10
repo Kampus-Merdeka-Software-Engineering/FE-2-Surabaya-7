@@ -6,6 +6,12 @@
         <script type="text/javascript" src="js/script.js"></script>
         <title>Ocean 7 Traverse</title> 
         <link rel="icon" href="assets/logo.png" type="image/png">
+        <script>
+
+        </script>
+        
+    </head>
+
     </head>
     <body>
         <header class="header"> 
@@ -27,6 +33,7 @@
                 <a href="login.html">Log In</a>
             </nav>
         </header>
+
         <div class="searchBox">
             <table class="ticketSearch-table">
                 <tr>
@@ -34,7 +41,7 @@
                         <img src="assets/logo.png" alt="" class="searchBox-img">
                     </td>
                     <td>
-                        <h1>Select Departure Sailing</h1>
+                        <h1 id="searchBox-title">Select Departure Sailing</h1>
                     </td>
                     <td rowspan="3">
                         <a href="home.html">
@@ -44,14 +51,14 @@
                 </tr>
                 <tr>
                     <td>
-                        <h2>Jakarta &rarr; Surabaya</h2>
+                        <h2 id="searchBox-route">Jakarta &rarr; Surabaya</h2>
                     </td>
                 </tr>
                 <tr>
-                    <td>6 November 2023  ||  3 Passangers  ||  Executive</td>
+                    <td id="searchBox-date">6 November 2023 || 3 Passangers || Executive</td>
                 </tr>
             </table>
-        </div> 
+        </div>        
 
         <div class="ticketSearch">
             <table class="ticketSearch-table">
@@ -66,26 +73,29 @@
                     <td><img src="assets/utensil.jpg" alt="" class="searchBox-img"></td>
                     <td class="luggage"><img src="assets/luggage-26184_1280.webp" alt=""></td>
                     <td>
-                        <h2>Rp 250,000/pax</h2>
+                        <h2 id="price">Rp 250,000/pax</h2>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">Duration: 23h 30m</td>
-                    <td colspan="2">Type: Direct</td>
+                    <td>Jakarta &rarr; Surabaya</td>
+                    <td>Duration: 23h 30m</td>
+                    <td>Type: Direct</td>
+                    <td id="totalPass"></td>
                     <td rowspan="2">
-                        <a href="bookform.html">
-                            <button class="purchase-detailButton">SELECT</button>
+                        <a href="#" id="selectButton">
+                            <button class="purchase-detailButton" onclick="selectTicket('Jakarta', 'Surabaya')">SELECT</button>
                         </a>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4">
                         <button onclick="myFunction('detail')" class="ticketSearch-Button">Sail Details</button> 
-                        <button onclick="myFunction('price')" class="ticketSearch-Button" >Price Details</button>
+                        <button onclick="myFunction('price')" class="ticketSearch-Button">Price Details</button>
                         <button onclick="myFunction('policy')" class="ticketSearch-Button">Policy</button> 
                     </td>
                 </tr>
             </table>
+            
             <div id="detail" class="ticket-detail">
                 <hr>
                 <table>
@@ -170,23 +180,25 @@
                     <td><img src="assets/utensil.jpg" alt="" class="searchBox-img"></td>
                     <td class="luggage"><img src="assets/luggage-26184_1280.webp" alt=""></td>
                     <td>
-                        <h2>Rp 250,000/pax</h2>
+                        <h2 id="price2">Rp 250,000/pax</h2>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">Duration: 23h 30m</td>
-                    <td colspan="2">Type: Direct</td>
+                    <td>Surabaya &rarr; Jakarta</td>
+                    <td>Duration: 23h 30m</td>
+                    <td>Type: Direct</td>
+                    <td id="totalPass2"></td>
                     <td rowspan="2">
-                        <a href="bookform.html">
-                            <button class="purchase-detailButton">SELECT</button>
+                        <a href="#" id="selectButton2">
+                            <button class="purchase-detailButton" onclick="selectTicket('Surabaya', 'Jakarta')">SELECT</button>
                         </a>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <button onclick="myFunction('detail2')" class="ticketSearch-Button">Sail Details</button> 
-                        <button onclick="myFunction('price2')" class="ticketSearch-Button" >Price Details</button>
-                        <button onclick="myFunction('policy2')" class="ticketSearch-Button">Policy</button> 
+                        <button onclick="myFunction('detail2')" class ="ticketSearch-Button">Sail Details</button>
+                        <button onclick="myFunction('price2')" class="ticketSearch-Button">Price Details</button>
+                        <button onclick="myFunction('policy2')" class="ticketSearch-Button">Policy</button>
                     </td>
                 </tr>
             </table>
@@ -204,7 +216,7 @@
                         </td>
                     </tr> 
                     <tr>
-                        <td>Jakarta  |  06:00 WIB  |  6 November 2023</td>
+                        <td>Palembang  |  06:00 WIB  |  6 November 2023</td>
                     </tr> 
                     <tr>
                         <td>
@@ -212,7 +224,7 @@
                         </td>
                     </tr>           
                     <tr>
-                        <td>Surabaya  |  06:30 WIB  | 7 November 2023</td>
+                        <td>Jakarta  |  06:30 WIB  | 7 November 2023</td>
                     </tr>
                 </table>
             </div>
@@ -274,23 +286,25 @@
                     <td><img src="assets/utensil.jpg" alt="" class="searchBox-img"></td>
                     <td class="luggage"><img src="assets/luggage-26184_1280.webp" alt=""></td>
                     <td>
-                        <h2>Rp 250,000/pax</h2>
+                        <h2 id="price3">Rp 250,000/pax</h2>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">Duration: 23h 30m</td>
-                    <td colspan="2">Type: Direct</td>
+                    <td>Jakarta &rarr; Palembang</td>
+                    <td>Duration: 23h 30m</td>
+                    <td>Type: Direct</td>
+                    <td id="totalPass3"></td>
                     <td rowspan="2">
-                        <a href="bookform.html">
-                            <button class="purchase-detailButton">SELECT</button>
+                        <a href="#" id="selectButton3">
+                            <button class="purchase-detailButton" onclick="selectTicket('Jakarta', 'Palembang')">SELECT</button>
                         </a>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <button onclick="myFunction('detail3')" class="ticketSearch-Button">Sail Details</button> 
-                        <button onclick="myFunction('price3')" class="ticketSearch-Button" >Price Details</button>
-                        <button onclick="myFunction('policy3')" class="ticketSearch-Button">Policy</button> 
+                        <button onclick="myFunction('detail3')" class ="ticketSearch-Button">Sail Details</button>
+                        <button onclick="myFunction('price3')" class="ticketSearch-Button">Price Details</button>
+                        <button onclick="myFunction('policy3')" class="ticketSearch-Button">Policy</button>
                     </td>
                 </tr>
             </table>
@@ -316,7 +330,7 @@
                         </td>
                     </tr>           
                     <tr>
-                        <td>Surabaya  |  06:30 WIB  | 7 November 2023</td>
+                        <td>Palembang  |  06:30 WIB  | 7 November 2023</td>
                     </tr>
                 </table>
             </div>
@@ -378,23 +392,25 @@
                     <td><img src="assets/utensil.jpg" alt="" class="searchBox-img"></td>
                     <td class="luggage"><img src="assets/luggage-26184_1280.webp" alt=""></td>
                     <td>
-                        <h2>Rp 250,000/pax</h2>
+                        <h2 id="price4">Rp 250,000/pax</h2>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">Duration: 23h 30m</td>
-                    <td colspan="2">Type: Direct</td>
+                    <td>Palembang &rarr; Jakarta</td>
+                    <td>Duration: 23h 30m</td>
+                    <td>Type: Direct</td>
+                    <td id="totalPass4"></td>
                     <td rowspan="2">
-                        <a href="bookform.html">
-                            <button class="purchase-detailButton">SELECT</button>
+                        <a href="#" id="selectButton4">
+                            <button class="purchase-detailButton" onclick="selectTicket('Palembang', 'Jakarta')">SELECT</button>
                         </a>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <button onclick="myFunction('detail4')" class="ticketSearch-Button">Sail Details</button> 
-                        <button onclick="myFunction('price4')" class="ticketSearch-Button" >Price Details</button>
-                        <button onclick="myFunction('policy4')" class="ticketSearch-Button">Policy</button> 
+                        <button onclick="myFunction('detail4')" class ="ticketSearch-Button">Sail Details</button>
+                        <button onclick="myFunction('price4')" class="ticketSearch-Button">Price Details</button>
+                        <button onclick="myFunction('policy4')" class="ticketSearch-Button">Policy</button>
                     </td>
                 </tr>
             </table>
@@ -412,7 +428,7 @@
                         </td>
                     </tr> 
                     <tr>
-                        <td>Jakarta  |  06:00 WIB  |  6 November 2023</td>
+                        <td>Palembang  |  06:00 WIB  |  6 November 2023</td>
                     </tr> 
                     <tr>
                         <td>
@@ -420,7 +436,7 @@
                         </td>
                     </tr>           
                     <tr>
-                        <td>Surabaya  |  06:30 WIB  | 7 November 2023</td>
+                        <td>Jakarta  |  06:30 WIB  | 7 November 2023</td>
                     </tr>
                 </table>
             </div>
