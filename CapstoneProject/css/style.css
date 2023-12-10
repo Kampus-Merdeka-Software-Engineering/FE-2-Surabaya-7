@@ -41,13 +41,26 @@
     opacity: 1;
     visibility: visible;
 }
-.wrapper-popup{
+.login-container,
+.signup-container {
+    width: 80%;
+    margin: auto;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+    margin-bottom: 15px;
+}
+
+.wrapper-popup {
     position: relative;
     width: 100%;
     min-height: 400px;
     display: flex;
+    flex-direction: column; /* Stack columns on top of each other */
 }
-.close{
+
+.close {
     position: absolute;
     right: 20px;
     top: 0;
@@ -57,26 +70,32 @@
     transition: all 200ms;
     text-decoration: none;
 }
-.column-popup{
-    width: 50%;
+
+.column-popup {
+    width: 100%;
     padding: 35px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 30px;
 }
-.details-popup{
+
+.details-popup {
     background: #6BB5FF;
 }
-.details-popup .h1-popup{
+
+.details-popup .h1-popup {
     color: white;
 }
-.signin, .signup{
+
+.signin,
+.signup {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.input-popup{
+
+.input-popup {
     background: #eee;
     border: none;
     padding: 12px 15px;
@@ -87,16 +106,19 @@
     color: #0d3e6a;
     font-size: inherit;
 }
-.input-popup:focus{
+
+.input-popup:focus {
     outline-color: #0d3e6a;
 }
-.a-popup{
+
+.a-popup {
     color: #10213e;
     text-decoration: none;
     font-size: 14px;
     margin: 15px 0;
 }
-.form-submit-popup{
+
+.form-submit-popup {
     background: #10213e;
     border: none;
     border-radius: 20px;
@@ -109,10 +131,24 @@
     cursor: pointer;
     transition: transform 80ms ease-in;
 }
-.form-submit-popup:hover{
+
+.form-submit-popup:hover {
     background: #071835;
     transform: scale(1.1);
 }
+
+/* Media query for smaller screens */
+@media (min-width: 768px) {
+    .wrapper-popup {
+        flex-direction: row; /* Display columns side by side on larger screens */
+    }
+
+    .column-popup {
+        width: 50%;
+    }
+}
+
+
 .signup .form-submit-popup{
     margin-top: 15px;
 }
@@ -142,13 +178,12 @@
 }
 @media only screen and (max-width:900px){
     .wrapper-popup{
-        width: 80%;
+        width: 100%;
     }
 }
 @media only screen and (max-width:400px){
     .wrapper-popup{
-        width: 80%;
-        flex-direction: column-reverse;
+        width: 100%;
     }
     .column-popup{
         width: 100%;
@@ -174,15 +209,6 @@
 
 }
 
-.login-container, .signup-container{
-    width: 80%; 
-    margin: auto; 
-    border-radius: 30px; 
-    background-color: white; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    margin-top: 100px; 
-    margin-bottom: 15px;
-}
 
 .logo img{
     width: 67px;
@@ -390,13 +416,14 @@ hr{
     min-height: 100vh;
     text-align: justify;
     color: #fff;
-    padding: 0 30%;
+    padding: 0 20%;
     padding-top: 30%;
 }
 .home-content h1{
     font-size: 30px;
     font-family: Playfair Display;
     color: #f8f8f8;
+    text-align: left;
 }
 .home-content span{
     color: #bbd4f1;
@@ -406,15 +433,15 @@ hr{
     font-size: 15px;
     margin: 30px auto;
     font-weight: 14;
-    line-height: 4px;
     font-family: Light;
+    text-align: left;
 }
 .home-content button {
     width: 129px;
     padding: 7px 0;
     text-align: center;
     color: #ff6e7a;
-    margin: 0px 10px;
+    margin: 0px 3px;
     border-radius: 25px;
     font-weight: bold;
     border: none;
@@ -442,16 +469,18 @@ hr{
     border-radius: 19px;
 }
 
-.input-box {
+.home-column-content .input-box {
     width: 100%;
     margin-top: 19px;
     height: 10%;
 }
-.input-box label {
+
+.home-column-content .input-box label {
     color: #333;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
-.input-box input {
+
+.input-box input  {
     position: relative;
     height: 28px;
     width: 100%;
@@ -461,14 +490,25 @@ hr{
     border-radius: 6px;
     padding: 0 6px;
 }
+
+.input-box select {
+    position: relative;
+    height: 28px;
+    width: 100%;
+    outline: none;
+    font-size: 1.3rem;
+    border: 1px solid #a9a5a5;
+    border-radius: 6px;
+    padding: 0 6px;
+}
+
 .column1 {
     display: flex;
     height: 70px;
-    column-gap: 15px;
 }
 .column2 {
     display: flex;
-    column-gap: 15px;
+    column-gap: 10px;
 }
 
 .form-button {
@@ -485,23 +525,49 @@ hr{
 
 }
 /* Media query for responsive design */
-@media (max-width: 768px) {
+@media (max-width: 815px) {
+    .home-column {
+        width: 100%;
+    }
+
     .home-content {
+        position: relative;
         padding: 0 10%;
-        padding-top: 10%;
+        padding-top: 3%;
+        margin: 220px;
+        
     }
 
     .home-content h1 {
-        font-size: 20px;
+        font-size: 21px;
+        text-align: center;
+        margin: -6px;
+        margin-right: 100px;
+        margin-top: 110px;
+        
     }
 
     .home-content p {
         font-size: 14px;
-        margin: 10px 0; /* Added margin for spacing */
+        margin: 0 10px; /* Added margin for spacing */
+        margin-left: -40px;
+        margin-top: -2%;
+    }
+
+    .home-content button {
+        width: 120px;
+        padding: 2px 0;
+        margin: 20px;
+        margin-top: 2%;
+        font-size: 0.7em;
     }
 
     .home-column-content {
         width: 100%;
+        padding: 10px;
+        padding-top: 2px;
+        margin: -170px;
+        margin-top: 110px;
     }
 
     .input-box {
@@ -516,7 +582,7 @@ hr{
 
 
 .top-destinations-title {
-    padding-top: 2%;
+    padding-top: 5%;
     font-size: 30px;
     font-family: Playfair Display;
     text-align: center;
@@ -529,25 +595,11 @@ hr{
     color: #005094; 
 }
 
-.all-destinations {
-    font-size: 17px;
-    margin: 20px auto;
-    margin-top: 2%;
-    text-decoration: underline;
-    color: #949494;
-    font-weight: 10;
-    line-height: 3px;
-    font-family: Light;
-    font-family: Playfair Display;
-    float: right;
-    margin-right: 5%;
-}
-
 .all-destinations-table{
     width: 80%; 
     margin-left: auto; 
     margin-right: auto; 
-    margin-top: 100px; 
+    margin-top: 50px; 
     border-spacing: 15px;
 }
 
@@ -593,10 +645,12 @@ hr{
 
 .home-container{
     position: relative;
+    height: auto;
+    width: 33.3%;
 }
 
 .container-image{
-    display: block;
+    position: relative;
     width: 100%;
     height: auto;
 }
@@ -655,6 +709,20 @@ hr{
     justify-content: center;
     font-family: source sans 3;
     font-size:medium;
+}
+
+/* Media query for responsive design */
+@media (max-width: 739px) {
+    .home-container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100;
+    }
+
+    .home-container .container-image{
+        position: relative;
+        padding-top: 2rem;
+    }
 }
 
 .section_aboutus {
@@ -805,13 +873,33 @@ hr{
 }
 
 .section_aboutus .profile img {
-    width: 75%;
+    width: 250px; /* Set your desired width */
+    height: 250px; /* Set your desired height */
     border-radius: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin:0 auto;
+    margin: 0 auto;
 
+}
+@media (max-width: 600px) {
+    .section_aboutus .profile img {
+        width: 150px; /* Set your desired width */
+        height: 150px; /* Set your desired height */
+        border-radius: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .section_aboutus .desc{
+        margin-top: -10px;
+    }
+    .desc h3{
+        margin-top: -10px;
+    }
+    .desc h4{
+        margin-bottom: 15px;
+    }
 }
 
 .section_aboutus .desc {
@@ -1166,6 +1254,29 @@ hr{
     width: 100%;
 }
 
+.ticketSearch-table td {
+    font-size: 16px; /* Adjust the font size as needed */
+}
+
+.ticketSearch-table img {
+    max-width: 100%; /* Ensure images don't exceed their container width */
+    height: auto;    /* Maintain the aspect ratio */
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+    .ticketSearch-table td {
+        font-size: 12px; /* Adjust the font size for tablets */
+    }
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 599px) {
+    .ticketSearch-table td {
+        font-size: 12px; /* Adjust the font size for mobile devices */
+    }
+}
+
 .searchBox-td{
     padding-left: 3%;
 }
@@ -1268,7 +1379,7 @@ hr{
 
 .booking-head p{
     font-size: 1.2rem;
-    margin-left: 34px;
+    margin-left: -150px;
     margin-top: 7px;
     font-family: Source sans 3;
     color: #000000;
@@ -1397,6 +1508,7 @@ hr{
     margin-top: 20px;
     padding-bottom: 10px;
     border-radius: 25px; 
+    margin-bottom: 15px;
 }
 
 
