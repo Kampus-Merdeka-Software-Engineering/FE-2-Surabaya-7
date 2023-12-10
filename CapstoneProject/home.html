@@ -3,9 +3,9 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/style.css">
-        <script type="text/javascript" src="js/script.js"></script>
         <title>Ocean 7 Traverse</title> 
         <link rel="icon" href="assets/logo.png" type="image/png">
+        
     </head>
     <body>
         <header class="header"> 
@@ -41,34 +41,39 @@
             </div>
             <div class="home-column">
                 <div class="home-column-content">
-                    <form action="ticketSearch.html" method="post">
+                    <form action="ticketSearch.html" method="get">
                         <div class="input-box">
                             <label>From</label> 
-                            <input type="text" placeholder="" required>
+                            <input type="text" placeholder="" name="from" id="from" required>
                         </div>
                         <div class="input-box">
                             <label>To</label>
-                            <input type="text" placeholder="" required>
+                            <input type="text" placeholder="" name="to" id="to" required>
                         </div>
                         <div class="column1">
                             <div class="input-box">
                                 <label>Departure</label>
-                                <input type="date" placeholder="" required>
-                            </div>
-                            <div class="input-box">
-                                <label>Return</label>
-                                <input type="date" placeholder="" required>
+                                <input type="date" placeholder="" id="date" name="date" required>
                             </div>
                         </div>
                         <div class="column2">
                             <div class="input-box">
-                                <label>Total Passangers</label>
-                                <input type="text" placeholder="" required>
+                                <label for="totalPassanger">Total Passangers</label>
+                                <select id="totalPassengers" name="totalPassengers" required>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
                             </div>
                             <div class="input-box">
-                                <label>Seat Class</label>
-                                <input type="text" placeholder="" required>
-                            </div>
+                                <label for="seatClass">Seat Class</label>
+                                <select id="seat" name="seat" required>
+                                    <option value="Economy">Economy</option>
+                                    <option value="Executive">Executive</option>
+                                </select>
+                            </div>                            
                         </div>
                         <button class="form-button" type="submit">Let's Search</button>
                     </form>
@@ -78,65 +83,64 @@
         <section>
                 <div>
                     <h2 class="top-destinations-title"> Top <span>Destinations</span> </h2> 
-                    <p class="all-destinations"> All Destinations </p>
                     <table class="all-destinations-table">
                         <tr>
                             <td class="home-container">
-                                <img src="assets/background3.jpg" alt="" class="container-image">
+                                <img src="assets/Banyuwangi.jpeg" alt="" class="container-image">
+                                <div class="container-overlay">
+                                    <div class="container-text">Banyuwangi</div>
+                                </div>
+                            </td>
+                            <td class="home-container">
+                                <img src="assets/bali.jpeg" alt=""  class="container-image">
                                 <div class="container-overlay">
                                     <div class="container-text">Bali</div>
                                 </div>
                             </td>
                             <td class="home-container">
-                                <img src="assets/background3.jpg" alt=""  class="container-image">
+                                <img src="assets/batam.jpeg" alt="" class="container-image">
                                 <div class="container-overlay">
-                                    <div class="container-text">Bali</div>
-                                </div>
-                            </td>
-                            <td class="home-container">
-                                <img src="assets/background3.jpg" alt="" class="container-image">
-                                <div class="container-overlay">
-                                    <div class="container-text">Bali</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="home-container">
-                                <img src="assets/background3.jpg" alt="" class="container-image">
-                                <div class="container-overlay">
-                                    <div class="container-text">Bali</div>
-                                </div>
-                            </td>
-                            <td class="home-container">
-                                <img src="assets/background3.jpg" alt="" class="container-image">
-                                <div class="container-overlay">
-                                    <div class="container-text">Bali</div>
-                                </div>
-                            </td>
-                            <td class="home-container">
-                                <img src="assets/background3.jpg" alt="" class="container-image">
-                                <div class="container-overlay">
-                                    <div class="container-text">Bali</div>
+                                    <div class="container-text">Batam</div>
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td class="home-container">
-                                <img src="assets/background3.jpg" alt="" class="container-image">
+                                <img src="assets/kalimantan.jpg" alt="" class="container-image">
                                 <div class="container-overlay">
-                                    <div class="container-text">Bali</div>
+                                    <div class="container-text">Kalimantan</div>
                                 </div>
                             </td>
                             <td class="home-container">
-                                <img src="assets/background3.jpg" alt="" class="container-image">
+                                <img src="assets/lombok.jpg" alt="" class="container-image">
                                 <div class="container-overlay">
-                                    <div class="container-text">Bali</div>
+                                    <div class="container-text">Lombok</div>
                                 </div>
                             </td>
                             <td class="home-container">
-                                <img src="assets/background3.jpg" alt="" class="container-image">
+                                <img src="assets/Surabaya.jpg" alt="" class="container-image">
                                 <div class="container-overlay">
-                                    <div class="container-text">Bali</div>
+                                    <div class="container-text">Surabaya</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="home-container">
+                                <img src="assets/lampung.jpg" alt="" class="container-image">
+                                <div class="container-overlay">
+                                    <div class="container-text">lampung</div>
+                                </div>
+                            </td>
+                            <td class="home-container">
+                                <img src="assets/riau.webp" alt="" class="container-image">
+                                <div class="container-overlay">
+                                    <div class="container-text">Riau</div>
+                                </div>
+                            </td>
+                            <td class="home-container">
+                                <img src="assets/palembang.jpeg" alt="" class="container-image">
+                                <div class="container-overlay">
+                                    <div class="container-text">Palembang</div>
                                 </div>
                             </td>
                         </tr>
