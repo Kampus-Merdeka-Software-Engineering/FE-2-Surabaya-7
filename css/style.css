@@ -1,5 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
 
+#success-message {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1.7rem
+}
+
+#success-message div {
+    flex:1 1 45rem;
+    background: #fff;
+    border:var(--border);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    padding: 2rem;
+    border-radius: .5rem;
+    color:var(--black);
+}
+
+#success-message h3 {
+  margin-top: 0;
+}
+
+#success-message span {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.hidden {
+    display: none;
+}
+
 * {
     margin: 0;
     padding: 0;
