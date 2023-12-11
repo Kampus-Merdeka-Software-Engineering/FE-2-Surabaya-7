@@ -301,20 +301,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Ambil elemen dengan class 'ticketSearch-time'
-var timeElement = document.querySelector('.ticketSearch-time1 h2');
-
-// Periksa apakah elemen ditemukan sebelum mencoba mengakses properti 'textContent'
-if (timeElement) {
-    // Ambil nilai teks dari elemen
-    var timeText = timeElement.textContent;
-
-    // Tampilkan nilai waktu
-    console.log('Waktu:', timeText);
-} else {
-    console.log('Elemen tidak ditemukan.');
-}
-
 
 document.addEventListener('DOMContentLoaded', function () {
     var form = document.getElementById('bookconfirm');
@@ -327,6 +313,9 @@ document.addEventListener('DOMContentLoaded', function () {
             var formData = JSON.parse(localStorage.getItem('formData'));
             var contactDetails = JSON.parse(localStorage.getItem('contactDetails'));
             var totalPrice = localStorage.getItem('totalPrice');
+            var departureTime = localStorage.getItem('departureTime');
+            var arrivalTime = localStorage.getItem('arrivalTime');
+
 
             // Log data sebelum dikirim
             console.log('formData:', formData);
@@ -334,12 +323,12 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('totalPrice:', totalPrice);
 
             // Panggil sendData untuk mengirim data
-            sendData(formData, contactDetails, totalPrice);
+            sendData(formData, contactDetails, totalPrice,departureTime,arrivalTime);
         });
     }
 
 // Fungsi untuk mengirim data
-function sendData(formData, contactDetails, totalPrice) {
+function sendData(formData, contactDetails, totalPrice,departureTime,arrivalTime) {
     // Lakukan permintaan fetch
     fetch('https://be-2-surabaya-7-production-28d6.up.railway.app/bookconfirm', {
         method: 'POST',
@@ -355,7 +344,10 @@ function sendData(formData, contactDetails, totalPrice) {
             name: contactDetails.name,
             phone_number: contactDetails.phone_number,
             email: contactDetails.email,
-            totalPrice: totalPrice
+            totalPrice: totalPrice,
+            departureTime: departureTime,
+            arrivalTime: arrivalTime,
+
         })
     })
     .then((response) => {
@@ -378,6 +370,8 @@ function sendData(formData, contactDetails, totalPrice) {
             localStorage.removeItem('formData');
             localStorage.removeItem('contactDetails');
             localStorage.removeItem('totalPrice');
+            localStorage.removeItem('departureTime');
+            localStorage.removeItem('arrivalTime');
         } else {
             throw new Error("Pesan tidak ditemukan dalam respons");
         }
@@ -405,3 +399,84 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const select1Button = document.querySelector('.purchase-detailButton.select1');
+    const time1Element = document.querySelector('.ticketSearch-time.time1 h2');
+
+    if (select1Button && time1Element) {
+        select1Button.addEventListener('click', function(event) {
+            const timeText = time1Element.textContent.trim();
+            const [departureTime, arrivalTime] = timeText.split(' → ');
+
+            localStorage.setItem('departureTime', departureTime);
+            localStorage.setItem('arrivalTime', arrivalTime);
+
+            console.log('Waktu Keberangkatan:', departureTime);
+            console.log('Waktu Kedatangan:', arrivalTime);
+        });
+    } else {
+        console.error('Elemen dengan kelas "purchase-detailButton select1" atau "ticketSearch-time time1" tidak ditemukan');
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const select2Button = document.querySelector('.purchase-detailButton.select2');
+    const time2Element = document.querySelector('.ticketSearch-time.time2 h2');
+
+    if (select2Button && time2Element) {
+        select1Button.addEventListener('click', function(event) {
+            const timeText = time2Element.textContent.trim();
+            const [departureTime, arrivalTime] = timeText.split(' → ');
+
+            localStorage.setItem('departureTime', departureTime);
+            localStorage.setItem('arrivalTime', arrivalTime);
+
+            console.log('Waktu Keberangkatan:', departureTime);
+            console.log('Waktu Kedatangan:', arrivalTime);
+        });
+    } else {
+        console.error('Elemen dengan kelas "purchase-detailButton select1" atau "ticketSearch-time time1" tidak ditemukan');
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const select3Button = document.querySelector('.purchase-detailButton.select3');
+    const time3Element = document.querySelector('.ticketSearch-time.time3 h2');
+
+    if (select3Button && time3Element) {
+        select3Button.addEventListener('click', function(event) {
+            const timeText = time3Element.textContent.trim();
+            const [departureTime, arrivalTime] = timeText.split(' → ');
+
+            localStorage.setItem('departureTime', departureTime);
+            localStorage.setItem('arrivalTime', arrivalTime);
+
+            console.log('Waktu Keberangkatan:', departureTime);
+            console.log('Waktu Kedatangan:', arrivalTime);
+        });
+    } else {
+        console.error('Elemen dengan kelas "purchase-detailButton select1" atau "ticketSearch-time time1" tidak ditemukan');
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const select4Button = document.querySelector('.purchase-detailButton.select4');
+    const time4Element = document.querySelector('.ticketSearch-time.time4 h2');
+
+    if (select4Button && time4Element) {
+        select4Button.addEventListener('click', function(event) {
+            const timeText = time4Element.textContent.trim();
+            const [departureTime, arrivalTime] = timeText.split(' → ');
+
+            localStorage.setItem('departureTime', departureTime);
+            localStorage.setItem('arrivalTime', arrivalTime);
+
+            console.log('Waktu Keberangkatan:', departureTime);
+            console.log('Waktu Kedatangan:', arrivalTime);
+        });
+    } else {
+        console.error('Elemen dengan kelas "purchase-detailButton select1" atau "ticketSearch-time time1" tidak ditemukan');
+    }
+});
+
