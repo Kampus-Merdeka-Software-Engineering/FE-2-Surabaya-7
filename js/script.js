@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Fungsi untuk mengirim data
 function sendData(formData, contactDetails, totalPrice) {
     // Lakukan permintaan fetch
-    fetch('https://be-2-surabaya-7-production-ce92.up.railway.app/bookconfirm', {
+    fetch('https://be-2-surabaya-7-production-27f9.up.railway.app/bookconfirm', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
