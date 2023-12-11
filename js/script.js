@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Fungsi untuk mengirim data
 function sendData(formData, contactDetails, totalPrice,departureTime,arrivalTime) {
     // Lakukan permintaan fetch
-    fetch('https://be-2-surabaya-7-production-28d6.up.railway.app/bookconfirm', {
+    fetch('https://be-2-surabaya-7-production-de4f.up.railway.app/bookconfirm', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
